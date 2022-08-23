@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '';
 
 buttonPressed(String buttonText){}
 var size,width,height;
@@ -41,7 +40,7 @@ class HomePage extends StatelessWidget {
           body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("../utils/background.png"),
+                  image: AssetImage("./images/background.png"),
                   fit: BoxFit.cover,
                 )
           ),

@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
           body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("../images/background.png"),
+                  image: AssetImage("./images/background.png"),
                   fit: BoxFit.cover,
                 )
             ),
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
                           child: Text("12",
-                              style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:70)
+                              style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
                           ),
                         ),
                       ),
@@ -95,16 +95,28 @@ class HomePage extends StatelessWidget {
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
                           ),
-                        ),
+                      ),
                       ),
                     ],
-
                   ), //hello
                 ),
                 Container(
                   width: width,
                   height: height/2.5,
-                  color: Colors.transparent,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(100),
+                        topLeft: Radius.circular(100)
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                      color: Colors.white),
                   child: Padding(
                     padding: EdgeInsets.only(top: 150),
                     child:  Row(
