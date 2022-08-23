@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '';
 
 buttonPressed(String buttonText){}
 var size,width,height;
@@ -41,7 +40,7 @@ class HomePage extends StatelessWidget {
           body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("../utils/background.png"),
+                  image: AssetImage("../images/background.png"),
                   fit: BoxFit.cover,
                 )
             ),
@@ -74,7 +73,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
-                          child: Text("Hello",
+                          child: Text("12",
                               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:70)
                           ),
                         ),
@@ -92,7 +91,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
-                          child: Text("You have no\ntasks, let's add \nnew",
+                          child: Text("Tasks for today",
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
                           ),
