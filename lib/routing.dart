@@ -1,2 +1,2 @@
 import 'package:flutter/material.dart';
-import 'screens/WelcomeScreen.dart';
+import 'screens/welcome_screen.dart';
