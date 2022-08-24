@@ -16,7 +16,7 @@ Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
       ),
     ),
     style: ElevatedButton.styleFrom(
-      side: BorderSide(width: 3.0, color: Colors.blueAccent,),
+      side: const BorderSide(width: 3.0, color: Colors.blueAccent,),
       fixedSize: Size(btnwidth, btnhight),
       primary: btnColor, shadowColor: Colors.transparent,elevation: 0,
       shape: new RoundedRectangleBorder(
@@ -38,9 +38,9 @@ class HomePage extends StatelessWidget {
       title: 'Flutter layout demo',
       home: Scaffold(
           body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("./images/background.png"),
+                  image: const AssetImage("./images/background.png"),
                   fit: BoxFit.cover,
                 )
             ),
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5,bottom: height/7),
-                          child: Text("todo",
+                          child: const Text("todo",
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
                           ),
@@ -73,8 +73,8 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
-                          child: Text("12",
-                              style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
+                          child: const Text("12",
+                              style: const TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
                           ),
                         ),
                       ),
@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
-                          child: Text("Tasks for today",
+                          child: const Text("Tasks for today",
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
                           ),
@@ -100,39 +100,37 @@ class HomePage extends StatelessWidget {
                     ],
                   ), //hello
                 ),
-                Container(
-                  width: width,
-                  height: height/2.5,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(100),
-                        topLeft: Radius.circular(100)
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
+                  SingleChildScrollView(
+                  child: Container(
+                    width: width,
+                    height: height/2.29,
+                    decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                            topRight: const Radius.circular(75),
+                            topLeft: const Radius.circular(75)
                         ),
-                      ],
-                      color: Colors.white),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 150),
-                    child:  Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CheckboxListTile(
-                            title: Text('CheckBox'),
-                            value: isChecked,
-                            onChanged: (value){
-                            setState(() => isChecked = value!);
-                            }
-                        )
-                      ],
-                    ), //button
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: const Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                        color: Colors.white),
+                            child: Padding(
+                            padding: const EdgeInsets.only(top: 25),
+
+                            child:  CheckboxListTile(
+                                title: const Text('CheckBox'),
+                                value: isChecked,
+                                onChanged: (bool? value){
+                                  setState(() => isChecked = value!);
+                                }
+                         )
+                            ),
                   ),
-                ),
+                  ),
               ],
             ),
           )
