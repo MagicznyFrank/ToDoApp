@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 buttonPressed(String buttonText){}
 var size,width,height;
+bool isChecked = false;
 
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
     double btnwidth, double btnhight) {
@@ -28,7 +29,6 @@ Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -122,7 +122,13 @@ class HomePage extends StatelessWidget {
                     child:  Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        MyButton("Add Task", 15, Colors.transparent, Colors.blueAccent, width/1.3, 50)
+                        CheckboxListTile(
+                            title: Text('CheckBox'),
+                            value: isChecked,
+                            onChanged: (value){
+                            setState(() => isChecked = value!);
+                            }
+                        )
                       ],
                     ), //button
                   ),
@@ -134,4 +140,6 @@ class HomePage extends StatelessWidget {
 
     );
   }
+
+  void setState(bool Function() param0) {}
 }
