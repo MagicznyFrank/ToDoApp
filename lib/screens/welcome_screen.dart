@@ -4,24 +4,23 @@ buttonPressed(String buttonText){}
 var size,width,height;
 
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
-    double btnwidth, double btnhight) {
+    double btnWidth, double btnHeight) {
   return ElevatedButton(
-    onPressed: () => buttonPressed(btnText),
+    onPressed: (){},
+    style: ElevatedButton.styleFrom(
+      side: const BorderSide(width: 3.0, color: Colors.blueAccent,),
+      fixedSize: Size(btnWidth, btnHeight),
+      primary: btnColor, shadowColor: Colors.transparent,elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    ),
     child: Text(
       btnText,
       style: TextStyle(
         fontSize: btnSize,
         color: txtColor,
       ),
-    ),
-    style: ElevatedButton.styleFrom(
-      side: BorderSide(width: 3.0, color: Colors.blueAccent,),
-      fixedSize: Size(btnwidth, btnhight),
-      primary: btnColor, shadowColor: Colors.transparent,elevation: 0,
-      shape: new RoundedRectangleBorder(
-        borderRadius: new BorderRadius.circular(10.0),
-      ),
-
     ),
   );
 }

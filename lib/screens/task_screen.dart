@@ -1,36 +1,19 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
-buttonPressed(String buttonText){}
-var size,width,height;
-bool isChecked = false;
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
-Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
-    double btnwidth, double btnhight) {
-  return ElevatedButton(
-    onPressed: () => buttonPressed(btnText),
-    child: Text(
-      btnText,
-      style: TextStyle(
-        fontSize: btnSize,
-        color: txtColor,
-      ),
-    ),
-    style: ElevatedButton.styleFrom(
-      side: const BorderSide(width: 3.0, color: Colors.blueAccent,),
-      fixedSize: Size(btnwidth, btnhight),
-      primary: btnColor, shadowColor: Colors.transparent,elevation: 0,
-      shape: new RoundedRectangleBorder(
-        borderRadius: new BorderRadius.circular(10.0),
-      ),
-
-    ),
-  );
+  @override
+  State<HomePage> createState() => _HomePageState();
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    var size,width,height;
+    bool isChecked = false;
     size = MediaQuery.of(context).size;
     height = size.height;
     width = size.width;
@@ -40,7 +23,7 @@ class HomePage extends StatelessWidget {
           body: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage("./images/background.png"),
+                  image: AssetImage("./images/background.png"),
                   fit: BoxFit.cover,
                 )
             ),
@@ -62,7 +45,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ), //todo
+                  ),
                 ),
                 Container(
                   width: width,
@@ -74,7 +57,7 @@ class HomePage extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
                           child: const Text("12",
-                              style: const TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
+                              style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
                           ),
                         ),
                       ),
@@ -106,8 +89,8 @@ class HomePage extends StatelessWidget {
                     height: height/2.29,
                     decoration: BoxDecoration(
                         borderRadius: const BorderRadius.only(
-                            topRight: const Radius.circular(75),
-                            topLeft: const Radius.circular(75)
+                            topRight: Radius.circular(75),
+                            topLeft: Radius.circular(75)
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -139,5 +122,4 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  void setState(bool Function() param0) {}
 }
