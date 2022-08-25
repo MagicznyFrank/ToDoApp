@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
       title: 'Flutter layout demo',
       home: Scaffold(
           body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("./images/background.png"),
                   fit: BoxFit.cover,
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5,bottom: height/7),
-                        child: Text("todo",
+                        child: const Text("todo",
                             overflow: TextOverflow.fade,
                             style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
                         ),
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
-                      child: Text("Hello",
+                      child: const Text("Hello",
                       style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:70)
                       ),
                       ),
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
                       Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(left: width/9.5),
-                        child: Text("You have no\ntasks, let's add \nnew",
+                        child: const Text("You have no\ntasks, let's add \nnew",
                             overflow: TextOverflow.fade,
                             style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
                         ),
@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
                   height: height/2.5,
                   color: Colors.transparent,
                   child: Padding(
-                    padding: EdgeInsets.only(top: 150),
+                    padding: const EdgeInsets.only(top: 150),
                   child:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

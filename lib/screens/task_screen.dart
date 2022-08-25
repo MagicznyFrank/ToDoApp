@@ -10,10 +10,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var size,width,height;
+  bool _isChecked = false;
   @override
   Widget build(BuildContext context) {
-    var size,width,height;
-    bool isChecked = false;
     size = MediaQuery.of(context).size;
     height = size.height;
     width = size.width;
@@ -35,15 +35,14 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.transparent,
                   child:  Row(
                     children: [
-                      Flexible(
-                        child: Padding(
+                         Padding(
                           padding: EdgeInsets.only(left: width/9.5,bottom: height/7),
                           child: const Text("todo",
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
                           ),
                         ),
-                      ),
+
                     ],
                   ),
                 ),
@@ -103,12 +102,11 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white),
                             child: Padding(
                             padding: const EdgeInsets.only(top: 25),
-
                             child:  CheckboxListTile(
                                 title: const Text('CheckBox'),
-                                value: isChecked,
+                                value: _isChecked,
                                 onChanged: (bool? value){
-                                  setState(() => isChecked = value!);
+                                  setState(() => _isChecked = value!);
                                 }
                          )
                             ),
@@ -118,7 +116,6 @@ class _HomePageState extends State<HomePage> {
             ),
           )
       ),
-
     );
   }
 
