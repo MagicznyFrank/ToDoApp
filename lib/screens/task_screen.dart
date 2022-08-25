@@ -27,65 +27,58 @@ class _HomePageState extends State<HomePage> {
                   fit: BoxFit.cover,
                 )
             ),
+            child: SafeArea(
             child: Column(
               children: [
-                Container(
-                  width: width,
-                  height: height/4,
-                  color: Colors.transparent,
-                  child:  Row(
-                    children: [
                          Padding(
-                          padding: EdgeInsets.only(left: width/9.5,bottom: height/7),
-                          child: const Text("todo",
+                          padding: EdgeInsets.only(left: 25,bottom: height/7),
+                          child: const Align(
+                            alignment: Alignment.centerLeft,
+                              child: Text("todo",
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
                           ),
-                        ),
-
-                    ],
-                  ),
-                ),
-                Container(
-                  width: width,
-                  height: height/9,
-                  color: Colors.transparent,
-                  child:  Row(
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: width/9.5),
-                          child: const Text("12",
-                              style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
                           ),
                         ),
-                      ),
-                    ],
 
-                  ), //comment
-                ),
-                Container(
-                  width: width,
-                  height: height/5,
-                  color: Colors.transparent,
-                  child:  Row(
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: width/9.5),
+                          const Padding(
+                          padding: EdgeInsets.only(left: 25),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("12",
+                              style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
+                          ),
+                            ),
+                        ),
+                 Padding(
+                          padding: const EdgeInsets.only(left: 25),
+                          child: Align(
+                              alignment: Alignment.centerLeft,
+                          child: Container(
+                            width: 200,
                           child: const Text("Tasks for today",
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
                           ),
+                          )
+                          )
                       ),
-                      ),
-                    ],
-                  ), //hello
+                const Padding(
+                  padding: EdgeInsets.only(left: 25,top: 30),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("✔   2 tasks done",
+                        style: TextStyle(color: Colors.grey,fontSize:15)
+                    ),
+                  ),
                 ),
-                  SingleChildScrollView(
+
+              const Expanded(child: Align()),
+              SingleChildScrollView(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
                   child: Container(
-                    width: width,
-                    height: height/2.29,
+                    height: 300,
                     decoration: BoxDecoration(
                         borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(75),
@@ -103,6 +96,7 @@ class _HomePageState extends State<HomePage> {
                             child: Padding(
                             padding: const EdgeInsets.only(top: 25),
                             child:  CheckboxListTile(
+                                controlAffinity: ListTileControlAffinity.leading,
                                 title: const Text('CheckBox'),
                                 value: _isChecked,
                                 onChanged: (bool? value){
@@ -110,12 +104,15 @@ class _HomePageState extends State<HomePage> {
                                 }
                          )
                             ),
+
                   ),
                   ),
+            )
               ],
             ),
           )
       ),
+      )
     );
   }
 

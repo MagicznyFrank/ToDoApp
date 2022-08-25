@@ -37,84 +37,55 @@ class HomePage extends StatelessWidget {
       title: 'Flutter layout demo',
       home: Scaffold(
           body: Container(
+            width: width,
             decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("./images/background.png"),
                   fit: BoxFit.cover,
                 )
           ),
-            child: Column(
-              children: [
-                Container(
-                  width: width,
-                  height: height/4,
-                  color: Colors.transparent,
-                  child:  Row(
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: width/9.5,bottom: height/7),
-                        child: const Text("todo",
-                            overflow: TextOverflow.fade,
-                            style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
-                        ),
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25,bottom: height/7),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("todo",
+                          overflow: TextOverflow.fade,
+                          style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
                       ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 25),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Hello",
+                          style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:100)
                       ),
-                    ],
-                  ), //todo
-                ),
-                Container(
-                  width: width,
-                  height: height/9,
-                  color: Colors.transparent,
-                  child:  Row(
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: width/9.5),
-                      child: const Text("Hello",
-                      style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:70)
+                    ),
+                  ), //co
+            Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      width: 200,
+                      child: const Text("You have no tasks, let's add new",
+                          overflow: TextOverflow.fade,
+                          style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
                       ),
-                      ),
-                      ),
-                    ],
-
-                  ), //comment
-                ),
-                Container(
-                  width: width,
-                  height: height/5,
-                  color: Colors.transparent,
-                  child:  Row(
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: width/9.5),
-                        child: const Text("You have no\ntasks, let's add \nnew",
-                            overflow: TextOverflow.fade,
-                            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize:35)
-                        ),
-                        ),
-                      ),
-                    ],
-
-                  ), //hello
-                ),
-                Container(
-                  width: width,
-                  height: height/2.5,
-                  color: Colors.transparent,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 150),
-                  child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      MyButton("Add Task", 15, Colors.transparent, Colors.blueAccent, width/1.3, 50)
-                    ],
-                  ), //button
-                ),
-                ),
-              ],
+                    )
+                )
+            ),
+                  const Expanded(child: Align()),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 150),
+                    child: MyButton("Add Task", 15, Colors.transparent, Colors.blueAccent, width/1.3, 50)
+                    ), //button
+                ],
+              ),
             ),
         )
         ),
