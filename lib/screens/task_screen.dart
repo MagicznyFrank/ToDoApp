@@ -112,6 +112,15 @@ class _HomePageState extends State<HomePage> {
             ),
           )
       ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+          elevation: 200,
+          onPressed: () {
+          },
+          backgroundColor: Colors.blueAccent,
+          child: const Icon(Icons.add),
+        ),
+
       )
     );
   }
