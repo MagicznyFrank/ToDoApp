@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
       ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton(
-          elevation: 200,
+          elevation: 0,
           onPressed: () {
           },
           backgroundColor: Colors.blueAccent,
