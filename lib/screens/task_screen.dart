@@ -112,7 +112,6 @@ class _HomePageState extends State<HomePage> {
           )
       ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-
         floatingActionButton:  Padding(
           padding: const EdgeInsets.only(bottom: 260.0),
           child: MaterialButton(
@@ -121,9 +120,7 @@ class _HomePageState extends State<HomePage> {
               shape: const CircleBorder(),
           child: const Icon(Icons.add,size: 35,)
           )
-
         ),
-
       )
     );
   }
