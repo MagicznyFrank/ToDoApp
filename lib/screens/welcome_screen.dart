@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-buttonPressed(String buttonText){}
-var size,width,height;
-
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
     double btnWidth, double btnHeight) {
   return ElevatedButton(
@@ -30,6 +27,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size,width,height;
     size = MediaQuery.of(context).size;
     height = size.height;
     width = size.width;
