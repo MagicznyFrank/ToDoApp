@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/screens/welcome_screen.dart';
 import 'routing.dart';
-import 'screens/add_task_screen.dart';
+import 'screens/welcome_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: welcome_screen(),
     );
   }
 }

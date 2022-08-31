@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'task_screen.dart';
 
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
-    double btnWidth, double btnHeight) {
+    double btnWidth, double btnHeight, BuildContext context) {
   return ElevatedButton(
     onPressed: (){
       Navigator.push(context,
@@ -90,7 +90,7 @@ class _welcome_screenState extends State<welcome_screen> {
                   const Expanded(child: Align()),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 150),
-                    child: MyButton("Add Task", 15, Colors.transparent, Colors.blueAccent, width/1.3, 50)
+                    child: MyButton("Add Task", 15, Colors.transparent, Colors.blueAccent, width/1.3, 50, context)
                     ), //button
                 ],
               ),

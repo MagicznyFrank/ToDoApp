@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
-
 import 'package:flutter/material.dart';
+import 'add_task_screen.dart';
 
 class mainscreen extends StatefulWidget {
   const mainscreen({super.key});
@@ -116,7 +116,11 @@ class _mainscreen extends State<mainscreen> {
           padding: const EdgeInsets.only(bottom: 270.0),
           child: MaterialButton(
             color: Colors.blueAccent,
-          onPressed: (){},
+          onPressed: (){
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const add_task()),
+            );
+          },
               shape: const CircleBorder(),
           child: const Icon(
             Icons.add,

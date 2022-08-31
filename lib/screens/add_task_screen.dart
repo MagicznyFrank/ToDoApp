@@ -25,14 +25,14 @@ Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
   );
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class add_task extends StatefulWidget {
+  const add_task({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<add_task> createState() => _add_task();
 }
 
-class _HomePageState extends State<HomePage> {
+class _add_task extends State<add_task> {
   var size, width, height;
 
   @override
