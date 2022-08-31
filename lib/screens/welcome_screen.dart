@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'task_screen.dart';
 
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
     double btnWidth, double btnHeight) {
   return ElevatedButton(
-    onPressed: (){},
+    onPressed: (){
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const mainscreen()),
+      );
+    },
     style: ElevatedButton.styleFrom(
       side: const BorderSide(width: 3.0, color: Colors.blueAccent,),
       fixedSize: Size(btnWidth, btnHeight),
@@ -22,9 +27,14 @@ Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
   );
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class welcome_screen extends StatefulWidget {
+  const welcome_screen({super.key});
 
+  @override
+  State<welcome_screen> createState() => _welcome_screenState();
+}
+
+class _welcome_screenState extends State<welcome_screen> {
   @override
   Widget build(BuildContext context) {
     var size,width,height;

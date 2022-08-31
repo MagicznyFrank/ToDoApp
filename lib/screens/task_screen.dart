@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class mainscreen extends StatefulWidget {
+  const mainscreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<mainscreen> createState() => _mainscreen();
 }
 
-class _HomePageState extends State<HomePage> {
+class _mainscreen extends State<mainscreen> {
   var size,width,height;
   bool _isChecked = false;
   @override

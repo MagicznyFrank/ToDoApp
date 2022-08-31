@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/screens/welcome_screen.dart';
 import 'routing.dart';
 import 'screens/add_task_screen.dart';
 
@@ -8,6 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    home: welcome_screen();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
