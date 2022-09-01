@@ -4,6 +4,7 @@ import 'add_task_screen.dart';
 
 class mainscreen extends StatefulWidget {
   const mainscreen({super.key});
+  static const routeName = '/task_screen';
 
   @override
   State<mainscreen> createState() => _mainscreen();
