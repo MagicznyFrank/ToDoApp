@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
-    double btnWidth, double btnHeight) {
+    double btnWidth, double btnHeight, BuildContext context) {
   return ElevatedButton(
-    onPressed: (){},
+    onPressed: (){
+      Navigator.pushNamed(context, "/task");
+    },
     style: ElevatedButton.styleFrom(
       side: const BorderSide(width: 3.0, color: Colors.blueAccent,),
       fixedSize: Size(btnWidth, btnHeight),
@@ -27,6 +29,7 @@ Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
 
 class add_task extends StatefulWidget {
   const add_task({super.key});
+  static const routeName = '/add_task';
 
   @override
   State<add_task> createState() => _add_task();
@@ -37,9 +40,7 @@ class _add_task extends State<add_task> {
 
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery
-        .of(context)
-        .size;
+    size = MediaQuery.of(context).size;
     height = size.height;
     width = size.width;
     var today = DateTime.now();
@@ -136,7 +137,7 @@ class _add_task extends State<add_task> {
                                   padding: const EdgeInsets.only(bottom: 25),
                                   child: MyButton(
                                       "Add Task", 15, Colors.transparent,
-                                      Colors.blueAccent, 300, 50)
+                                      Colors.blueAccent, 300, 50, context)
                               ),
                             ],
                           )
