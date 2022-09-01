@@ -48,6 +48,7 @@ class _add_task extends State<add_task> {
     return MaterialApp(
         title: 'Flutter layout demo',
         home: Scaffold(
+            resizeToAvoidBottomInset: false,
           body: Container(
               decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -96,9 +97,8 @@ class _add_task extends State<add_task> {
                         ),
                       ),
                     ),
-                    const Expanded(child: Align()),
-                    SingleChildScrollView(
-                      child: Align(
+                    Expanded(child: Align()),
+                    Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           height: 400,
@@ -121,7 +121,7 @@ class _add_task extends State<add_task> {
                           child: Column(
                             children: [
                               const Padding(
-                                  padding: EdgeInsets.only(top: 50),
+                                  padding: EdgeInsets.only(top: 50,right:45,left: 45),
                                   child: TextField(
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
@@ -140,10 +140,8 @@ class _add_task extends State<add_task> {
                               ),
                             ],
                           )
-
                         ),
                       ),
-                    )
                   ],
                 ),
               )
