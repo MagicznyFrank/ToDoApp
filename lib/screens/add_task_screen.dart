@@ -32,11 +32,13 @@ class add_task extends StatefulWidget {
   static const routeName = '/add_task';
 
   @override
-  State<add_task> createState() => _add_task();
+  State<add_task> createState() => _add_task('');
 }
 
 class _add_task extends State<add_task> {
   var size, width, height;
+  final String new_task;
+  _add_task(this.new_task);
 
   @override
   Widget build(BuildContext context) {
