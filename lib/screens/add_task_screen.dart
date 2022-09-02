@@ -1,13 +1,15 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:todo_app/screens/task_screen.dart';
 
 Widget MyButton(String btnText,double btnSize, Color btnColor, Color txtColor,
     double btnWidth, double btnHeight, BuildContext context) {
   return ElevatedButton(
     onPressed: (){
-      Navigator.pushNamed(context, "/task");
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const mainscreen()),
+      );
     },
     style: ElevatedButton.styleFrom(
       side: const BorderSide(width: 3.0, color: Colors.blueAccent,),
@@ -31,14 +33,14 @@ class add_task extends StatefulWidget {
   const add_task({super.key});
   static const routeName = '/add_task';
 
+
   @override
-  State<add_task> createState() => _add_task('');
+  State<add_task> createState() => _add_task();
 }
 
 class _add_task extends State<add_task> {
-  var size, width, height;
-  final String new_task;
-  _add_task(this.new_task);
+  var size, width, height, value;
+
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +102,7 @@ class _add_task extends State<add_task> {
                         ),
                       ),
                     ),
-                    Expanded(child: Align()),
+                    const Expanded(child: Align()),
                     Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
@@ -123,12 +125,12 @@ class _add_task extends State<add_task> {
                               color: Colors.white),
                           child: Column(
                             children: [
-                              const Padding(
-                                  padding: EdgeInsets.only(top: 50,right:45,left: 45),
+                               Padding(
+                                  padding: const EdgeInsets.only(top: 50,right:45,left: 45),
                                   child: TextField(
-                                    decoration: InputDecoration(
+                                    controller: TextEditingController(),
+                                    decoration: const InputDecoration(
                                       border: OutlineInputBorder(
-
                                       ),
                                       hintText: 'Moje zadanie na dzisiaj',
                                     ),
@@ -138,7 +140,7 @@ class _add_task extends State<add_task> {
                               Padding(
                                   padding: const EdgeInsets.only(bottom: 25),
                                   child: MyButton(
-                                      "Add Task", 15, Colors.transparent,
+                                      new_task.text.toString(), 15, Colors.transparent,
                                       Colors.blueAccent, 300, 50, context)
                               ),
                             ],

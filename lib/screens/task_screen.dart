@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 import 'add_task_screen.dart';
+TextEditingController new_task = new TextEditingController();
 
 class mainscreen extends StatefulWidget {
-  const mainscreen({super.key});
+  const mainscreen({supe});
   static const routeName = '/task_screen';
-
   @override
   State<mainscreen> createState() => _mainscreen();
 }
@@ -33,9 +33,9 @@ class _mainscreen extends State<mainscreen> {
               children: [
                          Padding(
                           padding: EdgeInsets.only(left: 25,bottom: height/7),
-                          child: const Align(
+                          child:  const Align(
                             alignment: Alignment.centerLeft,
-                              child: Text("todo",
+                              child: Text('todo',
                               overflow: TextOverflow.fade,
                               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize:30)
                           ),

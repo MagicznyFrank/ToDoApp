@@ -14,10 +14,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        '/': (_) => welcome_screen(),
-        '/mainscreen': (_) => mainscreen(),
-      },
       home: welcome_screen(),
     );
   }
